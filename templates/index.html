@@ -11,9 +11,26 @@
   <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
   <link rel="stylesheet" href="{% static 'styles.min.css' %}">
 </head>
-{% block content %}
+
   <main class="site-main">
+    <!--================Hero Banner start =================-->
+    {% block banner %}
+    <section class="mb-30px">
+      <div class="container">
+        <div class="hero-banner">
+          <div class="hero-banner__content">
+            <h3>Tours &amp; Travels</h3>
+            <h1>Amazing Places on earth</h1>
+            <h4>December 12, 2018</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+    <!--================Hero Banner end =================-->
+
     <!--================ Blog slider start =================-->
+    {% block content %}
     <section>
       <div class="container">
         <div class="d-flex">
@@ -28,7 +45,7 @@
                 {% endif %}
               </div>
               <div class="blog__slide__content">
-                <h3><a href="#">{{ post.title }}</a></h3>
+                <h3><a href="">{{ post.title }}</a></h3>
                 <p>{{ post.published_at }}</p>
               </div>
             </div>
@@ -55,7 +72,7 @@
                 <ul class="thumb-info">
                   <li><a href="#"><i class="ti-user"></i>{{ post.author }}</a></li>
                   <li><a href="#"><i class="ti-notepad"></i>{{ post.published_at }}</a></li>
-                  <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }}</a></li>
+                  <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }} Comments</a></li>
                 </ul>
               </div>
               <div class="details mt-20">

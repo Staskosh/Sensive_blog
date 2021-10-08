@@ -12,6 +12,27 @@
 	<link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
   <link rel="stylesheet" href="{% static 'styles.min.css' %}">
 <body>
+  <main class="site-main">
+    <!--================Hero Banner start =================-->
+    {% block banner %}
+    <section class="mb-30px">
+      <div class="container">
+        <div class="hero-banner hero-banner--sm">
+          <div class="hero-banner__content">
+            <h1>Contact Us</h1>
+            <nav aria-label="breadcrumb" class="banner-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+    <!--================Hero Banner end =================-->
+
 {% block content %}
   <!-- ================ contact section start ================= -->
   <section class="section-margin--small section-margin">
