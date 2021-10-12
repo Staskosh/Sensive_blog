@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {% block title %}
-  <title>{{ post.title }} - Blog Details</title>
+    <title>{{ post.title }} - Blog Details</title>
   {% endblock %}
 	<link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
   <link rel="stylesheet" href="{% static 'styles.min.css' %}">
@@ -16,26 +16,27 @@
   <main class="site-main">
     <!--================Hero Banner start =================-->
     {% block banner %}
-    <section class="mb-30px">
-      <div class="container">
-        <div class="hero-banner hero-banner--sm">
-          <div class="hero-banner__content">
-            <h1>Blog details</h1>
-            <nav aria-label="breadcrumb" class="banner-breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
-              </ol>
-            </nav>
+      <section class="mb-30px">
+        <div class="container">
+          <div class="hero-banner hero-banner--sm">
+            <div class="hero-banner__content">
+              <h1>Blog details</h1>
+              <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     {% endblock %}
     <!--================Hero Banner end =================-->
 
-{% block content %}
+
   <!--================ Start Blog Post Area =================-->
+{% block content %}
   <section class="blog-post-area section-margin">
     <div class="container">
       <div class="row">
@@ -75,20 +76,20 @@
                 <div class="comments-area">
                     <h4>{{ post.comments|length }} Comments</h4>
                     {% for comment in post.comments %}
-                  <div class="comment-list">
-                        <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="desc">
-                                    <h5><a href="#">{{ comment.author }}</a></h5>
-                                    <p class="date">{{ comment.published_at }}</p>
-                                    <p class="comment">{{ comment.text }}</p>
+                      <div class="comment-list">
+                            <div class="single-comment justify-content-between d-flex">
+                                <div class="user justify-content-between d-flex">
+                                    <div class="desc">
+                                        <h5><a href="#">{{ comment.author }}</a></h5>
+                                        <p class="date">{{ comment.published_at }}</p>
+                                        <p class="comment">{{ comment.text }}</p>
+                                    </div>
+                                </div>
+                                <div class="reply-btn">
+                                        <a href="" class="btn-reply text-uppercase">reply</a>
                                 </div>
                             </div>
-                            <div class="reply-btn">
-                                    <a href="" class="btn-reply text-uppercase">reply</a>
-                            </div>
-                        </div>
-                  </div>
+                      </div>
                     {% endfor %}
                 </div>
         </div>
